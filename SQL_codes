@@ -1,0 +1,12 @@
+
+CREATE TABLE airlines(
+	airline_id VARCHAR(12) UNIQUE PRIMARY KEY NOT NULL ,
+	plane_id VARCHAR(12));
+  
+  CREATE TABLE planes(
+	plane_id VARCHAR(12) UNIQUE PRIMARY KEY NOT NULL ,
+	number_of_seats INTEGER);
+  
+  CREATE TABLE sold_seats(
+	airline_id VARCHAR(12) NOT NULL REFERENCES airlines(airline_id) ,
+	seat_num VARCHAR(12));
