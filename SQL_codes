@@ -35,3 +35,16 @@ INSERT INTO sold_seats(airline_id , seat_num)
 		(200, 8);
 
 		
+-- writing sql queries for task of finding number of free seats in each airline. --
+
+SELECT airlines.airline_id, planes.plane_id, (planes.number_of_seats - COUNT(sold_seat.airline_id)) AS free_seats 
+	FROM airlines
+	
+	LEFT JOIN planes 
+	ON airlines.plane_id = planes.plane_id
+	
+	LEFT JOIN sold_seats 
+	ON airlines.airline_id = sold_seats.airline_id
+	
+	GROUP BY airlines.airline_id, planes.plane_id
+	ORDER BY free_seats ;
