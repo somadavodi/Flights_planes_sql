@@ -10,3 +10,24 @@ CREATE TABLE airlines(
   CREATE TABLE sold_seats(
 	airline_id VARCHAR(12) NOT NULL REFERENCES airlines(airline_id) ,
 	seat_num VARCHAR(12));
+	
+
+INSERT INTO airliness (airline_id , plane_id)
+	VALUES	(211, 128),
+		(870, 157),
+		(200,23),
+		(221,23);
+		
+INSERT INTO planes(plane_id , number_of_seats)
+	VALUES	(128, 5),
+		(23, 7),
+		(157,4),
+		(239,2);
+		
+INSERT INTO sold_seats(airline_id , seat_num)
+	VALUES	(211, 1),
+		(870, 1),
+		(870, 6),
+		(200, 8);
+
+		
