@@ -1,3 +1,4 @@
+--create tables, columns and constraints--
 
 CREATE TABLE airlines(
 	airline_id VARCHAR(12) UNIQUE PRIMARY KEY NOT NULL ,
@@ -11,6 +12,9 @@ CREATE TABLE airlines(
 	airline_id VARCHAR(12) NOT NULL REFERENCES airlines(airline_id) ,
 	seat_num VARCHAR(12));
 	
+
+
+--insert values--
 
 INSERT INTO airliness (airline_id , plane_id)
 	VALUES	(211, 128),
